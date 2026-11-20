@@ -219,37 +219,40 @@ input:focus,textarea:focus{outline:2px solid #4F6E87;outline-offset:1px}
 <a href="#wie" style="display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 6px; background: #A65A3A; color: #FFFFFF; text-decoration: none; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>Stuur een WhatsApp</a>
 </div>
 </div>
-<form style="flex: 1 1 480px; min-width: 0; background: #FFFDF9; border-radius: 22px; padding: 40px; box-shadow: 0 20px 50px rgba(36, 50, 60, 0.08); display: flex; flex-direction: column; gap: 20px">
+<form id="aanvraag-form" name="hartuur-aanvraag" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="flex: 1 1 480px; min-width: 0; background: #FFFDF9; border-radius: 22px; padding: 40px; box-shadow: 0 20px 50px rgba(36, 50, 60, 0.08); display: flex; flex-direction: column; gap: 20px">
+<input type="hidden" name="form-name" value="hartuur-aanvraag">
+<p hidden><label>Niet invullen: <input name="bot-field"></label></p>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="f-naam" style="font-size: 15px; font-weight: 600; color: #24323C">Naam</label>
-<input id="f-naam" type="text" autocomplete="name" placeholder="Je voor- en achternaam" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C">
+<input id="f-naam" name="naam" type="text" required autocomplete="name" placeholder="Je voor- en achternaam" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C">
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 20px">
 <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px">
 <label for="f-mail" style="font-size: 15px; font-weight: 600; color: #24323C">E-mailadres</label>
-<input id="f-mail" type="email" autocomplete="email" placeholder="naam@voorbeeld.nl" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C">
+<input id="f-mail" name="email" type="email" required autocomplete="email" placeholder="naam@voorbeeld.nl" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C">
 </div>
 <div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px">
 <label for="f-tel" style="font-size: 15px; font-weight: 600; color: #24323C">Telefoonnummer</label>
-<input id="f-tel" type="tel" autocomplete="tel" placeholder="06 12345678" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C">
+<input id="f-tel" name="telefoon" type="tel" required autocomplete="tel" placeholder="06 12345678" style="min-height: 52px; box-sizing: border-box; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C">
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="f-vraag" style="font-size: 15px; font-weight: 600; color: #24323C">Waar wil je het over hebben? <span style="font-weight: 400; color: #5E6B73">(optioneel)</span></label>
-<textarea id="f-vraag" rows="4" placeholder="Een paar woorden is genoeg." style="box-sizing: border-box; padding: 14px 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C; resize: vertical"></textarea>
+<textarea id="f-vraag" name="vraag" rows="4" placeholder="Een paar woorden is genoeg." style="box-sizing: border-box; padding: 14px 16px; border: 1px solid #CFC6B8; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 16px; color: #24323C; resize: vertical"></textarea>
 </div>
 <fieldset style="border: 0; margin: 0; padding: 0; min-width: 0">
 <legend style="padding: 0; margin-bottom: 10px; font-size: 15px; font-weight: 600; color: #24323C">Met wie wil je praten? <span style="font-weight: 400; color: #5E6B73">(optioneel)</span></legend>
 <div style="display: flex; flex-wrap: wrap; gap: 10px">
-<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie" value="Janco Alblas" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Janco</label>
-<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie" value="Gert van Santen" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Gert</label>
-<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie" value="Paul Wisman" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Paul</label>
-<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie" value="Guido Rijnja" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Guido</label>
-<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie" value="Geen voorkeur" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Geen voorkeur</label>
+<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie[]" value="Janco Alblas" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Janco</label>
+<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie[]" value="Gert van Santen" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Gert</label>
+<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie[]" value="Paul Wisman" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Paul</label>
+<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie[]" value="Guido Rijnja" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Guido</label>
+<label style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid #CFC6B8; border-radius: 999px; background: #FFFFFF; font-size: 15px; color: #24323C; cursor: pointer"><input type="checkbox" name="wie[]" value="Geen voorkeur" style="width: 18px; height: 18px; margin: 0; accent-color: #A65A3A">Geen voorkeur</label>
 </div>
 <p style="margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: #5E6B73">Kies je er twee? Dan wordt het een duo-gesprek. Geen voorkeur? Dan kijken we samen wie het beste past.</p>
 </fieldset>
-<button type="button" style="min-height: 56px; border: 0; border-radius: 6px; background: #A65A3A; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Verstuur aanvraag</button>
+<p id="aanvraag-fout" hidden role="alert" style="margin: 0; font-size: 15px; line-height: 1.5; color: #A65A3A">Er ging iets mis bij het versturen. Probeer het nog een keer, of stuur ons een WhatsApp.</p>
+<button type="submit" style="min-height: 56px; border: 0; border-radius: 6px; background: #A65A3A; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 600; cursor: pointer">Verstuur aanvraag</button>
 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #5E6B73">Wat je deelt blijft vertrouwelijk. We gebruiken je gegevens alleen om contact met je op te nemen.</p>
 </form>
 </div>
@@ -265,5 +268,35 @@ input:focus,textarea:focus{outline:2px solid #4F6E87;outline-offset:1px}
 </footer>
 
 </div>
+<script>
+(function () {
+  var form = document.getElementById('aanvraag-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var knop = form.querySelector('button[type="submit"]');
+    var fout = document.getElementById('aanvraag-fout');
+    knop.disabled = true;
+    knop.textContent = 'Versturen…';
+    fout.hidden = true;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function (res) {
+      if (!res.ok) throw new Error(res.status);
+      form.innerHTML =
+        '<div role="status" style="display: flex; flex-direction: column; gap: 12px; padding: 12px 0">' +
+        '<p style="margin: 0; font-family: \'Newsreader\', Georgia, serif; font-size: 34px; line-height: 1.1; color: #24323C">Dank je wel!</p>' +
+        '<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #2B3943">Je aanvraag is binnen. We nemen zo snel mogelijk contact met je op.</p>' +
+        '</div>';
+    }).catch(function () {
+      knop.disabled = false;
+      knop.textContent = 'Verstuur aanvraag';
+      fout.hidden = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
